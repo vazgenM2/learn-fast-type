@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Type Faster</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+	<div class="settings th">
+		<div class="close-modal">X</div>
+		<div class="set">
+			<p class="title">Level: </p>
+			<input type="range" min='1' max='10' value="3" class="level-inp">
+		</div>
+		<div class="set">
+			<p class="title">Time: </p>
+			<select class="select-time">
+				<option value="none">None</option>
+				<option value="timer">Timer</option>
+				<option value="stopwatch">StopWatch</option>
+			</select>
+		</div>
+		<div class="set time-enter-set">
+			<input type="number" placeholder="Enter time (sec)" class="time-enter">
+		</div>
+		<div class="set options-sec">
+			<p class="title">Type: </p>
+			<div class="options">
+				<div class="option">
+					<label for="lowercase">abc</label>
+					<input type="checkbox" id="lowercase" class="var" checked>
+				</div>
+				<div class="option">
+					<label for="uppercase">ABC</label>
+					<input type="checkbox" id="uppercase" class="var" checked>
+				</div>
+				<div class="option">
+					<label for="number">123</label>
+					<input type="checkbox" id="number" class="var">
+				</div>
+				<div class="option">
+					<label for="symbol">$#?</label>
+					<input type="checkbox" id="symbol" class="var">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="wrapper th">
+		<header class="th">
+			<p class="logo th">Type Faster</p>
+			<div class="them th"></div>
+		</header>
+		<main>
+			<div class="start-container">
+				<i class="fa fa-cog setting th"></i>
+				<button class="start-btn th">Start</button>
+			</div>
+		</main>
+		<section class="board th">
+			<div class="text-zone th"></div>
+			<div class="info th">
+				<i class="fa fa-arrow-circle-left back-btn"></i>
+				<span class="text">Correct: <span class="correct">0</span></span>
+				<span class="text">Failes: <span class="failes">0</span></span>
+			</div>
+		</section>
+	</div>
+
+	<script src="./main.js"></script>
+</body>
+
+</html>

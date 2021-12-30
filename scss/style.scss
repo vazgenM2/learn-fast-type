@@ -151,6 +151,12 @@ main {
 				background-color: rgba(79, 74, 74, 0.6);
 				color: #fff;
 			}
+			&.true {
+				color: #3FB045;
+			}
+			&.false {
+				color: #C41E3A;
+			}
 		}
 	}
 	.info {

@@ -216,6 +216,14 @@ main .start-container .start-btn:hover {
   color: #fff;
 }
 
+.board .text-zone .variable.true {
+  color: #3FB045;
+}
+
+.board .text-zone .variable.false {
+  color: #C41E3A;
+}
+
 .board .info {
   width: 100%;
   height: 80px;

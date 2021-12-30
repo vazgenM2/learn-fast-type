@@ -100,15 +100,26 @@ document.addEventListener('keyup', (e) => {
 	if (game) {
 		if (e.key.length === 1 && ite < textLength) {
 			if (document.querySelectorAll('.text-zone .variable')[ite].innerHTML === e.key) {
-				document.querySelectorAll('.text-zone .variable')[ite].style.color = '#3FB045'
+				document.querySelectorAll('.text-zone .variable')[ite].classList.add('true')
 				document.querySelector('.correct').innerHTML = +document.querySelector('.correct').innerHTML + 1
 			} else {
-				document.querySelectorAll('.text-zone .variable')[ite].style.color = '#C41E3A'
+				document.querySelectorAll('.text-zone .variable')[ite].classList.add('false')
 				if (document.querySelector('.select-mode').value == 'count') {
 					document.querySelector('.failes').innerHTML = +document.querySelector('.failes').innerHTML + 1
 				} else if (document.querySelector('.select-mode').value == 'lose') {
 					showMess('You lose :(', `${document.querySelector('.correct').innerHTML}/${textLength} is correct`, true)
 					backToHome()
+				} else if (document.querySelector('.select-mode').value == 'restart') {
+					ite = 0
+					for (let i = 0; i < document.querySelectorAll('.text-zone .variable').length; i++) {
+						document.querySelectorAll('.text-zone .variable')[i].classList.remove('active')
+						document.querySelectorAll('.text-zone .variable')[i].classList.remove('true')
+						document.querySelectorAll('.text-zone .variable')[i].classList.remove('false')
+					}
+					if (ite !== textLength) document.querySelectorAll('.text-zone .variable')[ite].classList.add('active')
+					document.querySelector('.failes').innerHTML = 0
+					document.querySelector('.correct').innerHTML = 0
+					return
 				}
 			}
 			ite++

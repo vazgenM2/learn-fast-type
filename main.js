@@ -144,6 +144,7 @@ function backToHome() {
 	game = false
 	document.querySelector('.board').style.display = 'none'
 	document.querySelector('main').style.display = 'flex'
+	clearInterval(t)
 }
 
 // ================== Setting button
@@ -187,6 +188,7 @@ function changeTimer(min, sec) {
 function loseGame() {
 	showMess('You lose :(', `${document.querySelector('.correct').innerHTML}/${textLength} is correct`, true)
 	backToHome()
+	clearInterval(t)
 }
 
 // ============================= Show message

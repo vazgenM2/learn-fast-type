@@ -29,6 +29,14 @@
 		<div class="set time-enter-set">
 			<input type="number" placeholder="Enter time (sec)" class="time-enter">
 		</div>
+		<div class="set">
+			<p class="title">Mode: </p>
+			<select class="select-mode">
+				<option value="count">Count wrong answers</option>
+				<option value="lose">Lose after wrong</option>
+			</select>
+		</div>
+
 		<div class="set options-sec">
 			<p class="title">Type: </p>
 			<div class="options">
@@ -69,8 +77,16 @@
 				<i class="fa fa-arrow-circle-left back-btn"></i>
 				<span class="text">Correct: <span class="correct">0</span></span>
 				<span class="text">Failes: <span class="failes">0</span></span>
+				<span class="text" style="margin-left: auto;">Time: <span class="timer">-</span></span>
 			</div>
 		</section>
+		<div class="modal">
+			<div class="close-modal message-modal">X</div>
+			<div class="mess">
+				<p class="general"></p>
+				<p class="sub"></p>
+			</div>
+		</div>
 	</div>
 
 	<script src="./main.js"></script>

@@ -192,8 +192,8 @@ main {
 
 .settings {
 	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-	// display: none;
-	display: flex;
+	display: none;
+	// display: flex;
 	flex-direction: column;
 	position: absolute;
 	width: 300px;
@@ -249,12 +249,15 @@ main {
 			letter-spacing: 1.3px;
 			right: 13.5px;
 		}
-		.select-time {
+		.select-time, .select-mode {
 			margin-left: 20px;
 			outline: none;
 			background-color: #858585;
 			padding: 3px 10px;
 			color: #fff;
+		}
+		.select-mode {
+			margin-left: 10px;
 		}
 		.time-enter {
 			background-color: #858585;
@@ -273,7 +276,6 @@ main {
 		display: none;
 	}
 	.options-sec {
-		margin-top: 0;
 		flex-direction: column;
 		align-items: flex-start;
 		.option {
@@ -287,6 +289,62 @@ main {
 			input {
 				margin-left: 10px;
 			}
+		}
+	}
+}
+
+.modal {
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	display: none;
+	flex-direction: column;
+	position: absolute;
+	width: 350px;
+	height: 200px;
+	background-color: #A4A4A4;
+	transform: translate(-50%,-50%);
+	left: 50%;
+	top: 50%;
+	border-radius: 20px;
+	padding: 55px 40px ;
+	font-size: 22px;
+	overflow: hidden;
+	&.active {
+		background-color: #747474;
+	}
+	.close-modal {
+		width: 50px;
+		height: 50px;
+		background-color: rgb(240, 7, 7);
+		border-radius: 5px;
+		position: absolute;
+		right: 0;
+		top: 0;
+		cursor: pointer;
+		color: #fff;
+		font-size: 30px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+		font-weight: bold;
+		&:hover {
+			opacity: 0.8;
+		}
+	}
+	.mess {
+		color: #fff;
+		font-size: 35px;
+		margin: auto auto;
+		text-transform: capitalize;
+		text-align: center;
+		// margin-top: 50px;
+		.general {
+			font-weight: bold;
+			white-space: nowrap;
+		}
+		.sub {
+			font-size: 25px;
+			margin-top: 10px;
 		}
 	}
 }

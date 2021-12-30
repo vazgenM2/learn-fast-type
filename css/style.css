@@ -264,9 +264,7 @@ main .start-container .start-btn:hover {
 
 .settings {
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -348,12 +346,16 @@ main .start-container .start-btn:hover {
   right: 13.5px;
 }
 
-.settings .set .select-time {
+.settings .set .select-time, .settings .set .select-mode {
   margin-left: 20px;
   outline: none;
   background-color: #858585;
   padding: 3px 10px;
   color: #fff;
+}
+
+.settings .set .select-mode {
+  margin-left: 10px;
 }
 
 .settings .set .time-enter {
@@ -387,7 +389,6 @@ main .start-container .start-btn:hover {
 }
 
 .settings .options-sec {
-  margin-top: 0;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -414,4 +415,75 @@ main .start-container .start-btn:hover {
 
 .settings .options-sec .option input {
   margin-left: 10px;
+}
+
+.modal {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  width: 350px;
+  height: 200px;
+  background-color: #A4A4A4;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  border-radius: 20px;
+  padding: 55px 40px;
+  font-size: 22px;
+  overflow: hidden;
+}
+
+.modal.active {
+  background-color: #747474;
+}
+
+.modal .close-modal {
+  width: 50px;
+  height: 50px;
+  background-color: #f00707;
+  border-radius: 5px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+  color: #fff;
+  font-size: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+.modal .close-modal:hover {
+  opacity: 0.8;
+}
+
+.modal .mess {
+  color: #fff;
+  font-size: 35px;
+  margin: auto auto;
+  text-transform: capitalize;
+  text-align: center;
+}
+
+.modal .mess .general {
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.modal .mess .sub {
+  font-size: 25px;
+  margin-top: 10px;
 }

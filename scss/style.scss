@@ -133,6 +133,7 @@ main {
 		background-color: #858585;
 	}
 	.text-zone {
+		font-family: serif;
 		font-size: 40px;
 		letter-spacing: 2px;
 		max-width: 100%;
@@ -255,7 +256,7 @@ main {
 			letter-spacing: 1.3px;
 			right: 13.5px;
 		}
-		.select-time, .select-mode {
+		.select-time, .select-mode, .select-text {
 			margin-left: 20px;
 			outline: none;
 			background-color: #858585;
@@ -278,8 +279,19 @@ main {
 			}
 		}
 	}
-	.time-enter-set {
+	.time-enter-set, .text-enter-set {
 		display: none;
+	}
+	.text-enter-set textarea {
+		resize: none;
+		padding: 3px;
+		font-size: 13px;
+		margin-top: -5px;
+		outline: none;
+		border: none;
+		&:focus {
+			border: 1px solid #C41E3A70;
+		}
 	}
 	.options-sec {
 		flex-direction: column;

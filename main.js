@@ -41,12 +41,13 @@ document.querySelector('.start-btn').addEventListener('click', () => {
 	document.querySelector('.board').style.display = 'flex'
 	document.querySelector('.failes').innerHTML = 0
 	document.querySelector('.correct').innerHTML = 0
+	if (document.querySelector('.select-text').value == 'random') {
+		varMix = []
+		for (let i in isVariable) if (isVariable[i]) varMix.push(i)
+		if (!varMix.length) varMix = ['lowercase', 'uppercase']
 
-	varMix = []
-	for (let i in isVariable) if (isVariable[i]) varMix.push(i)
-	if (!varMix.length) varMix = ['lowercase', 'uppercase']
-
-	level = document.querySelector('.level-inp').value
+		level = document.querySelector('.level-inp').value
+	}
 	if (document.querySelector('.select-time').value == 'timer') {
 		time = [0, 0]
 		let value = +document.querySelector('.time-enter').value
@@ -82,14 +83,22 @@ document.querySelector('.start-btn').addEventListener('click', () => {
 		}, 1000)
 	}
 
-	textLength = randomIntFromInterval((level - 1) * 10, level * 10)
-	if (textLength == 0) textLength = 1
+	if (document.querySelector('.select-text').value == 'random') {
+		textLength = randomIntFromInterval((level - 1) * 10, level * 10)
+		if (textLength == 0) textLength = 1
+	} else if (document.querySelector('.select-text').value == 'your') {
+		textLength = document.querySelector('#your-text').value.length
+	}
 	ite = 0
 	let type;
 	for (let i = 0; i < textLength; i++) {
 		let span = document.createElement('span')
-		type = varMix[randomIntFromInterval(0, varMix.length - 1)]
-		span.innerHTML = variable[type][randomIntFromInterval(0, variable[type].length - 1)]
+		if (document.querySelector('.select-text').value == 'random') {
+			type = varMix[randomIntFromInterval(0, varMix.length - 1)]
+			span.innerHTML = variable[type][randomIntFromInterval(0, variable[type].length - 1)]
+		} else if (document.querySelector('.select-text').value == 'your') {
+			span.innerHTML = document.querySelector('#your-text').value[i]
+		}
 		span.classList.add('variable')
 		document.querySelector('.text-zone').appendChild(span)
 	}
@@ -169,11 +178,18 @@ for (let i = 0; i < document.querySelectorAll('.var').length; i++) {
 	})
 }
 
-// ================== Chossing time
+// ================== Choosing time
 document.querySelector('.select-time').addEventListener('change', () => {
 	if (document.querySelector('.select-time').value == 'timer') document.querySelector('.time-enter-set').style.display = 'block'
 	else document.querySelector('.time-enter-set').style.display = 'none'
 })
+
+//  ================= Choosing text
+document.querySelector('.select-text').addEventListener('change', () => {
+	if (document.querySelector('.select-text').value == 'your') document.querySelector('.text-enter-set').style.display = 'block'
+	else document.querySelector('.text-enter-set').style.display = 'none'
+})
+
 
 // ================== Function for changing timer value
 function changeTimer(min, sec) {

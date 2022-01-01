@@ -184,6 +184,7 @@ main .start-container .start-btn:hover {
 }
 
 .board .text-zone {
+  font-family: serif;
   font-size: 40px;
   letter-spacing: 2px;
   max-width: 100%;
@@ -354,7 +355,7 @@ main .start-container .start-btn:hover {
   right: 13.5px;
 }
 
-.settings .set .select-time, .settings .set .select-mode {
+.settings .set .select-time, .settings .set .select-mode, .settings .set .select-text {
   margin-left: 20px;
   outline: none;
   background-color: #858585;
@@ -392,8 +393,21 @@ main .start-container .start-btn:hover {
   color: #fff;
 }
 
-.settings .time-enter-set {
+.settings .time-enter-set, .settings .text-enter-set {
   display: none;
+}
+
+.settings .text-enter-set textarea {
+  resize: none;
+  padding: 3px;
+  font-size: 13px;
+  margin-top: -5px;
+  outline: none;
+  border: none;
+}
+
+.settings .text-enter-set textarea:focus {
+  border: 1px solid #C41E3A70;
 }
 
 .settings .options-sec {
